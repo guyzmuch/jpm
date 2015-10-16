@@ -1,4 +1,4 @@
-JPM [![Dependency Status](https://david-dm.org/mozilla/jpm.png)](https://david-dm.org/mozilla/jpm) [![Build Status](https://travis-ci.org/mozilla/jpm.png)](https://travis-ci.org/mozilla/jpm)
+JPM [![Dependency Status](https://david-dm.org/mozilla-jetpack/jpm.png)](https://david-dm.org/mozilla-jetpack/jpm) [![Build Status](https://travis-ci.org/mozilla-jetpack/jpm.png)](https://travis-ci.org/mozilla-jetpack/jpm)
 ===
 
 [![NPM](https://nodei.co/npm/jpm.png?stars&downloads)](https://nodei.co/npm/jpm/)
@@ -21,7 +21,7 @@ npm install jpm -g
 Installing from GitHub to get latest features or working on jpm itself, use [npm link](https://www.npmjs.org/doc/cli/npm-link.html) to add the `jpm` global to your path:
 
 ```
-git clone https://github.com/mozilla/jpm.git
+git clone https://github.com/mozilla-jetpack/jpm.git
 cd jpm
 npm install
 npm link
@@ -103,6 +103,21 @@ Extension Auto-Installer which will then install the new xpi.  To end the proces
 For a simple xpi and post, use:
 
     jpm post --post-url http://localhost:8888/
+
+## Releasing new jpm versions
+
+For releasing a new version, ensure you have `release-it` via npm, which creates an incremental version commit, pushes to GH, and npm, and adds a tag. If you want to do a minor or major release as opposed to the default patch release, [check out release-it's documentation](https://github.com/webpro/release-it#usage-examples) on how to do it (it's easy).
+
+```
+$ cd PATH_TO_JPM_REPO
+$ release-it
+```
+
+This will push to GitHub as well -- which should be your fork. To also push the tags upstream, where upstream is most likely `mozilla-jetpack/jpm`:
+
+```
+$ git push upstream TAG_NAME
+```
 
 ## License
 
